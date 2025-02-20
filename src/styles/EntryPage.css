@@ -1,0 +1,70 @@
+/* EntryPage.css */
+.card {
+    --bg-color: transparent;
+    padding: 1.5rem 2.5rem;
+    border-radius: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+  
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px; /* Increased spacing */
+}
+  
+.loader {
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 35px; /* Increased font size */
+    height: 50px;
+    padding: 12px;
+    display: flex;
+    border-radius: 50px;
+    text-align: center;
+}
+  
+.words {
+    overflow: hidden;
+    position: relative;
+    margin-left: 12px;
+    height: 40px; /* Increased height */
+}
+  
+.words::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      var(--bg-color) 10%,
+      transparent 30%,
+      transparent 70%,
+      var(--bg-color) 90%
+    );
+    z-index: 20;
+}
+  
+.word {
+    display: block;
+    height: 100%;
+    padding-left: 8px;
+    color: #ffea00; /* Highlighted Text */
+    font-size: 40px; /* Bigger text */
+    font-weight: bold;
+    animation: spin_4991 5s infinite ease-in-out;
+}
+  
+@keyframes spin_4991 {
+    10% { transform: translateY(-120%); }
+    25% { transform: translateY(0); }
+    35% { transform: translateY(-220%); }
+    50% { transform: translateY(-100%); }
+    60% { transform: translateY(-320%); }
+    75% { transform: translateY(-200%); }
+    85% { transform: translateY(-420%); }
+    100% { transform: translateY(-300%); }
+}

@@ -1,0 +1,104 @@
+/* Reset global margins & padding */
+html, body, #root, .App {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+/* Navbar styles */
+.navbar {
+  background: #1f3951; /* Navbar background */
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Push logo left & links right */
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Navbar container */
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensures items are on opposite ends */
+  width: 100%;
+  padding: 10px 20px; /* Adjust padding for better spacing */
+}
+
+/* Logo section */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between logo & text */
+}
+
+.logo-container img {
+  width: 40px; /* Adjust logo size */
+  height: auto;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a, .nav-links button {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 15px;
+}
+
+.nav-links a:hover, .nav-links button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* Responsive - Show mobile menu button */
+.menu-icon {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile menu styles */
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #34495e;
+  padding: 15px;
+  position: fixed; /* Ensure it stays fixed on the screen */
+  top: 60px;
+  right: 20px;
+  border-radius: 8px;
+}
+
+.mobile-menu a, .mobile-menu button {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  text-align: left;
+}
+
+.mobile-menu a:hover, .mobile-menu button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}

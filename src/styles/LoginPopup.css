@@ -1,0 +1,131 @@
+/* Background Overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Popup Box */
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 350px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: center;
+  }
+  
+  /* Close Button */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* Input Fields */
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Sign In Button */
+  .sign {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .sign:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Social Login */
+  .social-message {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+  }
+  
+  .line {
+    flex: 1;
+    height: 1px;
+    background-color: #ccc;
+  }
+  
+  .message {
+    padding: 0 10px;
+    font-size: 14px;
+  }
+  
+  /* Social Buttons */
+  .social-icons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .icon {
+    background-color: #ddd;
+    border: none;
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .icon:hover {
+    background-color: #bbb;
+  }
+  
+  /* Sign Up Link */
+  .signup {
+    margin-top: 10px;
+  }
+  
+  .signup a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .signup a:hover {
+    text-decoration: underline;
+  }
+  .form {
+    width: 400px;  /* Make it wider */
+    max-width: 90%; /* Responsive */
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow */
+  }
+  

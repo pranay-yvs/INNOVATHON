@@ -1,6 +1,9 @@
 import React from "react";
+import logo from "../assets/logo1.png";
+
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+
 import "../styles/EntryPage.css"; // Ensure this CSS file exists
 
 const EntryPage = () => {
@@ -13,8 +16,8 @@ const EntryPage = () => {
         transition={{ duration: 1 }}
         className="text-center text-white"
       >
-        <img src="./logo1.png" alt="Logo" className="w-24 mx-auto mb-4 drop-shadow-lg" />
-        <h1 className="text-6xl font-bold drop-shadow-lg">Welcome to Ed-ARENA</h1>
+<img src={logo} alt="Logo" className="w-24 mx-auto mb-4 drop-shadow-lg" />
+<h1 className="text-6xl font-bold drop-shadow-lg">Welcome to Ed-ARENA</h1>
 
         {/* Centered Animated Subtitle */}
         <div className="loader-container">

@@ -1,53 +1,54 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const Dashboard = () => {
-  const [user, setUser] = useState(null);
+    const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      const token = localStorage.getItem("token");
-      if (!token) {
-        window.location.href = "/"; 
-        return;
-      }
+    useEffect(() => {
+        const fetchUser = async () => {
+            try {
+                const token = localStorage.getItem("token"); // JWT Token from login
+                const response = await axios.get("http://localhost:5000/api/user", {
+                    headers: { Authorization: `Bearer ${token}` }
+                });
+                setUser(response.data);
+            } catch (error) {
+                console.error("Error fetching user", error);
+            }
+        };
 
-      try {
-        const response = await fetch("http://localhost:5000/user", {
-          method: "GET",
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        fetchUser();
+    }, []);
 
-        const data = await response.json();
-        if (!response.ok) {
-          localStorage.removeItem("token");
-          window.location.href = "/";
-        } else {
-          setUser(data);
-        }
-      } catch (error) {
-        console.error("Error fetching user data:", error);
-      }
-    };
+    return (
+        <div className="flex">
+            {/* Sidebar */}
+            <div className="w-64 bg-blue-700 text-white h-screen p-5">
+                <h2 className="text-2xl font-bold">Dashboard</h2>
+                <ul className="mt-5">
+                    <li className="py-2"><a href="#">Profile</a></li>
+                    <li className="py-2"><a href="#">Assignments</a></li>
+                    <li className="py-2"><a href="#">Test Results</a></li>
+                    <li className="py-2"><a href="#">Arena</a></li>
+                </ul>
+            </div>
 
-    fetchUser();
-  }, []);
-
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    window.location.href = "/";
-  };
-
-  if (!user) return <p>Loading...</p>;
-
-  return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-96">
-        <h2 className="text-2xl font-bold text-center mb-4">Welcome, {user.name}!</h2>
-        <p><strong>Email:</strong> {user.email}</p>
-        <button onClick={handleLogout} className="mt-4 w-full bg-red-600 text-white p-2 rounded-lg hover:bg-red-700">Logout</button>
-      </div>
-    </div>
-  );
+            {/* Main Content */}
+            <div className="flex-1 p-10">
+                <h1 className="text-3xl font-bold">Welcome to Your Dashboard</h1>
+                {user ? (
+                    <div className="bg-white p-5 mt-5 shadow-lg rounded-lg">
+                        <h2 className="text-xl font-bold">Profile</h2>
+                        <p><strong>Name:</strong> {user.name}</p>
+                        <p><strong>Email:</strong> {user.email}</p>
+                        <p><strong>User ID:</strong> {user._id}</p>
+                    </div>
+                ) : (
+                    <p>Loading...</p>
+                )}
+            </div>
+        </div>
+    );
 };
 
 export default Dashboard;
